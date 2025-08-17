@@ -3,9 +3,13 @@
 @section('content')
     <div class="min-h-screen bg-gray-50 flex flex-col md:flex-row overflow-x-hidden">
         <!-- Blur Mask -->
-        <div id="navMask" class="fixed inset-0 bg-black/30 backdrop-blur-md z-10 transition-opacity duration-300 opacity-0 pointer-events-none md:hidden"></div>
+        <div id="navMask"
+            class="fixed inset-0 bg-black/30 backdrop-blur-md z-10 transition-opacity duration-300 opacity-0 pointer-events-none md:hidden">
+        </div>
         <!-- Burger Button -->
-        <button id="burgerBtn" class="md:hidden fixed top-6 right-6 z-40 bg-gradient-to-r from-blue-600 to-blue-400 text-white p-3 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110" onclick="toggleSidebar()">
+        <button id="burgerBtn"
+            class="md:hidden fixed top-6 right-6 z-40 bg-gradient-to-r from-blue-600 to-blue-400 text-white p-3 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110"
+            onclick="toggleSidebar()">
             <span id="burgerIcon">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -17,13 +21,20 @@
                 </svg>
             </span>
         </button>
-    <!-- Sidebar -->
-        <aside id="sidebarNav" class="max-w-[90vw] w-full md:w-72 bg-white/90 backdrop-blur-lg shadow-2xl border-b md:border-b-0 md:border-r border-gray-200 flex flex-col py-8 px-6 items-start justify-start fixed md:static top-0 left-0 h-[100vh] md:h-auto z-30 transition-transform duration-300 ease-in-out md:translate-x-0 -translate-x-full md:translate-x-0 rounded-r-3xl">
+
+
+
+        <!-- Sidebar -->
+        <aside id="sidebarNav"
+            class="max-w-[90vw] w-full md:w-72 bg-white/90 backdrop-blur-lg shadow-2xl border-b md:border-b-0 md:border-r border-gray-200 flex flex-col py-8 px-6 items-start justify-start fixed md:static top-0 left-0 h-[100vh] md:h-auto z-30 transition-transform duration-300 ease-in-out md:translate-x-0 -translate-x-full md:translate-x-0 rounded-r-3xl">
             <div class="flex items-center gap-3 mb-8">
-                <svg class="w-10 h-10 text-blue-500 drop-shadow-lg" fill="currentColor" stroke="none" viewBox="0 0 256 256">
-                    <path d="M198.1 62.59a76 76 0 0 0-140.2 0A71.71 71.71 0 0 0 16 127.8C15.9 166 48 199 86.14 200a72.09 72.09 0 0 0 33.86-7.53V232a8 8 0 0 0 16 0v-39.53a72.17 72.17 0 0 0 32 7.53h1.82c38.18-1 70.29-34 70.18-72.2a71.71 71.71 0 0 0-41.9-65.21ZM169.45 184A56.08 56.08 0 0 1 136 174v-41l43.58-21.78a8 8 0 1 0-7.16-14.32L136 115.06V88a8 8 0 0 0-16 0v51.06l-36.42-18.22a8 8 0 1 0-7.16 14.32L120 156.94v17a56 56 0 0 1-33.45 10c-29.65-.71-54.63-26.42-54.55-56.1A55.77 55.77 0 0 1 67.11 76a8 8 0 0 0 4.53-4.67 60 60 0 0 1 112.72 0 8 8 0 0 0 4.53 4.67A55.79 55.79 0 0 1 224 127.84c.08 29.68-24.9 55.39-54.55 56.16Z" />
+                <svg class="w-10 h-10 text-blue-500 drop-shadow-lg" fill="currentColor" stroke="none"
+                    viewBox="0 0 256 256">
+                    <path
+                        d="M198.1 62.59a76 76 0 0 0-140.2 0A71.71 71.71 0 0 0 16 127.8C15.9 166 48 199 86.14 200a72.09 72.09 0 0 0 33.86-7.53V232a8 8 0 0 0 16 0v-39.53a72.17 72.17 0 0 0 32 7.53h1.82c38.18-1 70.29-34 70.18-72.2a71.71 71.71 0 0 0-41.9-65.21ZM169.45 184A56.08 56.08 0 0 1 136 174v-41l43.58-21.78a8 8 0 1 0-7.16-14.32L136 115.06V88a8 8 0 0 0-16 0v51.06l-36.42-18.22a8 8 0 1 0-7.16 14.32L120 156.94v17a56 56 0 0 1-33.45 10c-29.65-.71-54.63-26.42-54.55-56.1A55.77 55.77 0 0 1 67.11 76a8 8 0 0 0 4.53-4.67 60 60 0 0 1 112.72 0 8 8 0 0 0 4.53 4.67A55.79 55.79 0 0 1 224 127.84c.08 29.68-24.9 55.39-54.55 56.16Z" />
                 </svg>
-                <span class="text-2xl font-extrabold text-blue-700 tracking-wide drop-shadow">{{ config('app.name') }}<span class="text-blue-400">Admin</span></span>
+                <span class="text-2xl font-extrabold text-blue-700 tracking-wide drop-shadow">{{ config('app.name') }}<span
+                        class="text-blue-400">Admin</span></span>
             </div>
             <nav class="flex-1 w-full">
                 <ul class="flex flex-col gap-4 w-full">
@@ -63,7 +74,7 @@
                                     d="M230.92 212c-15.23-26.33-38.7-45.21-66.09-54.16a72 72 0 1 0-73.66 0c-27.39 8.94-50.86 27.82-66.09 54.16a8 8 0 1 0 13.85 8c18.84-32.56 52.14-52 89.07-52s70.23 19.44 89.07 52a8 8 0 1 0 13.85-8ZM72 96a56 56 0 1 1 56 56 56.06 56.06 0 0 1-56-56Z" />
                             </svg>
                             Profile</a></li>
-                    <li><a href="{{ route('profile.edit') }}"
+                    <li><a href="{{ route('preview') }}"
                             class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 text-gray-700">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6" viewBox="0 0 256 256">
                                 <path
@@ -80,6 +91,21 @@
                                 </svg>
                                 Users</a></li>
                     @endcan
+
+                    <li><a href="{{route('mylinks')}}"
+                            class="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-100 text-blue-700 font-semibold">
+                            <svg :class="(selected === 'Dashboard') || (page === 'ecommerce' || page === 'analytics' ||
+                                page === 'marketing' || page === 'crm' || page === 'stocks') ?
+                            'menu-item-icon-active' : 'menu-item-icon-inactive'"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="menu-item-icon-inactive">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M5.5 3.25C4.25736 3.25 3.25 4.25736 3.25 5.5V8.99998C3.25 10.2426 4.25736 11.25 5.5 11.25H9C10.2426 11.25 11.25 10.2426 11.25 8.99998V5.5C11.25 4.25736 10.2426 3.25 9 3.25H5.5ZM4.75 5.5C4.75 5.08579 5.08579 4.75 5.5 4.75H9C9.41421 4.75 9.75 5.08579 9.75 5.5V8.99998C9.75 9.41419 9.41421 9.74998 9 9.74998H5.5C5.08579 9.74998 4.75 9.41419 4.75 8.99998V5.5ZM5.5 12.75C4.25736 12.75 3.25 13.7574 3.25 15V18.5C3.25 19.7426 4.25736 20.75 5.5 20.75H9C10.2426 20.75 11.25 19.7427 11.25 18.5V15C11.25 13.7574 10.2426 12.75 9 12.75H5.5ZM4.75 15C4.75 14.5858 5.08579 14.25 5.5 14.25H9C9.41421 14.25 9.75 14.5858 9.75 15V18.5C9.75 18.9142 9.41421 19.25 9 19.25H5.5C5.08579 19.25 4.75 18.9142 4.75 18.5V15ZM12.75 5.5C12.75 4.25736 13.7574 3.25 15 3.25H18.5C19.7426 3.25 20.75 4.25736 20.75 5.5V8.99998C20.75 10.2426 19.7426 11.25 18.5 11.25H15C13.7574 11.25 12.75 10.2426 12.75 8.99998V5.5ZM15 4.75C14.5858 4.75 14.25 5.08579 14.25 5.5V8.99998C14.25 9.41419 14.5858 9.74998 15 9.74998H18.5C18.9142 9.74998 19.25 9.41419 19.25 8.99998V5.5C19.25 5.08579 18.9142 4.75 18.5 4.75H15ZM15 12.75C13.7574 12.75 12.75 13.7574 12.75 15V18.5C12.75 19.7426 13.7574 20.75 15 20.75H18.5C19.7426 20.75 20.75 19.7427 20.75 18.5V15C20.75 13.7574 19.7426 12.75 18.5 12.75H15ZM14.25 15C14.25 14.5858 14.5858 14.25 15 14.25H18.5C18.9142 14.25 19.25 14.5858 19.25 15V18.5C19.25 18.9142 18.9142 19.25 18.5 19.25H15C14.5858 19.25 14.25 18.9142 14.25 18.5V15Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            Links</a></li>
+
+
 
             </ul>
         </nav>
@@ -131,19 +157,25 @@
     <!-- Main Content -->
     <main class="flex-1 p-4 md:p-10">
         <div class="flex flex-col md:flex-row items-center justify-between mb-8 gap-4">
-            <h1 class="text-3xl font-extrabold text-blue-700">Dashboard</h1>
-            <div class="flex items-center gap-4">
+            <h1 class="text-3xl font-extrabold text-blue-700 hidden sm:flex">Dashboard</h1>
+
+
+            <a href="{{ route('profile.edit') }}"
+                class="flex sm:shadow sm:bg-white pl-4 flex-col-reverse sm:flex-row  items-center gap-4 hover:bg-gray-100 px-2 py-1 rounded transition">
                 <span class="text-gray-600">{{ preg_replace('/^https?:\/\//', '', config('app.url')) }}/<span
                         class="font-semibold">{{ '@' . Auth::user()->username }}</span></span>
                 @if (Auth::user()->user_image)
                     <img src="{{ Auth::user()->user_image }}"
-                        class="w-10 h-10 object-cover rounded-full border border-gray-300" alt="Avatar">
+                        class="size-36 sm:size-12 object-cover rounded-lg border border-gray-300" alt="Avatar">
                 @else
                     <img src="https://ui-avatars.com/api/?name={{ Auth::user()->first_name ?? Auth::user()->username }}"
-                        class="w-10 h-10 rounded-full border border-gray-300" alt="Avatar">
+                        class="size-36 object-cover rounded-full border border-gray-300" alt="Avatar">
                 @endif
-            </div>
+            </a>
         </div>
+
+
+
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
             <div class="bg-white rounded-2xl shadow p-6 flex flex-col gap-2">
                 <span class="text-gray-500">Kunden</span>

@@ -39,3 +39,6 @@ npm install
 # Entwicklungsserver starten
 npm run dev
 # bitree
+
+ICONS (https://blade-ui-kit.com/blade-icons/bxl-discord)
+// composer require mallardduck/blade-boxicons

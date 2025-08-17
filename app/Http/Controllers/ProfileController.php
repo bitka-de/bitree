@@ -38,12 +38,21 @@ class ProfileController extends Controller
         }
 
         if ($request->hasFile('user_image')) {
+            \Log::info('Profilbild-Upload: Datei erkannt', ['name' => $request->file('user_image')->getClientOriginalName()]);
+            // Altes Bild löschen, falls vorhanden und nicht Standard
+            if ($user->user_image && preg_match('/profile_images\//', $user->user_image)) {
+                if (Storage::disk('public')->exists($user->user_image)) {
+                    Storage::disk('public')->delete($user->user_image);
+                }
+            }
             $path = $request->file('user_image')->store('profile_images', 'public');
-            $user->user_image = 'storage/' . $path;
+            $user->user_image = $path;
+        } else {
+            \Log::warning('Profilbild-Upload: Keine Datei im Request gefunden');
         }
 
-        $user->save();
+    $user->save();
 
-        return redirect()->route('dashboard')->with('success', 'Profil erfolgreich aktualisiert!');
+    return redirect()->route('dashboard')->with('success', 'Profil erfolgreich aktualisiert!');
     }
 }

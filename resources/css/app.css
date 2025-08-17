@@ -9,3 +9,57 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+
+
+/* Header-Komponente */
+@layer components {
+  .header-wrapper {
+    @apply relative flex flex-col items-center justify-between border border-gray-100 pt-3.5 sm:py-3.5 lg:flex-row lg:px-6;
+  }
+
+  .header-avatar-wrapper {
+    @apply z-10 flex flex-col items-center justify-center gap-3 md:flex-row;
+  }
+
+  .header-avatar-img {
+    @apply size-36 rounded-lg object-cover shadow-md ring-2 ring-white md:size-12;
+  }
+
+  .header-name-block {
+    @apply flex flex-col items-center sm:items-start;
+  }
+
+  .header-name {
+    @apply text-xl font-semibold text-blue-700 sm:text-lg;
+  }
+
+  .header-title {
+    @apply text-xs text-gray-400 uppercase;
+  }
+
+  .header-nav {
+    @apply w-full overflow-scroll py-2 sm:w-auto lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2;
+  }
+
+  .header-nav-list {
+    @apply flex gap-5 overflow-x-auto bg-gradient-to-tr from-white px-6 py-3.5 whitespace-nowrap shadow-md sm:rounded-full;
+  }
+
+  .nav-link {
+    @apply relative font-medium text-gray-800 hover:text-blue-700;
+  }
+
+  .nav-link-active {
+    @apply text-blue-700 after:absolute after:-bottom-1 after:left-1/4 after:h-[2px] after:w-1/2 after:rounded-full after:bg-blue-700;
+    content: "";
+  }
+
+  .header-toggle-btn {
+    @apply absolute top-2 right-2 z-10 rounded-full bg-blue-50 p-3 text-xl lg:relative lg:top-auto lg:right-auto;
+  }
+
+  .header-toggle-icon {
+    @apply size-6 fill-blue-500;
+  }
+}
