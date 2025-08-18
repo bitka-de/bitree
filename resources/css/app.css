@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,60 +6,71 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+
+    --color-brand-50: #f1f9fa;
+    --color-brand-100: #daedf3;
+    --color-brand-200: #badce7;
+    --color-brand-300: #8ac0d6;
+    --color-brand-400: #5ca3c1;
+    --color-brand-500: #3781a3;
+    --color-brand-600: #30698a;
+    --color-brand-700: #2d5771;
+    --color-brand-800: #2c4a5e;
+    --color-brand-900: #283f51;
+    --color-brand-950: #162836;
 }
-
-
 
 /* Header-Komponente */
 @layer components {
-  .header-wrapper {
-    @apply relative flex flex-col items-center justify-between border border-gray-100 pt-3.5 sm:py-3.5 lg:flex-row lg:px-6;
-  }
+    .header-wrapper {
+        @apply relative flex flex-col items-center justify-between border border-gray-100 pt-3.5 sm:py-3.5 lg:flex-row lg:px-6;
+    }
 
-  .header-avatar-wrapper {
-    @apply z-10 flex flex-col items-center justify-center gap-3 md:flex-row;
-  }
+    .header-avatar-wrapper {
+        @apply z-10 flex flex-col items-center justify-center gap-3 md:flex-row;
+    }
 
-  .header-avatar-img {
-    @apply size-36 rounded-lg object-cover shadow-md ring-2 ring-white md:size-12;
-  }
+    .header-avatar-img {
+        @apply size-36 rounded-lg object-cover shadow-md ring-2 ring-white md:size-12;
+    }
 
-  .header-name-block {
-    @apply flex flex-col items-center sm:items-start;
-  }
+    .header-name-block {
+        @apply flex flex-col items-center sm:items-start;
+    }
 
-  .header-name {
-    @apply text-xl font-semibold text-blue-700 sm:text-lg;
-  }
+    .header-name {
+        @apply text-xl font-semibold text-blue-700 sm:text-lg;
+    }
 
-  .header-title {
-    @apply text-xs text-gray-400 uppercase;
-  }
+    .header-title {
+        @apply text-xs text-gray-400 uppercase;
+    }
 
-  .header-nav {
-    @apply w-full overflow-scroll py-2 sm:w-auto lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2;
-  }
+    .header-nav {
+        @apply w-full overflow-scroll py-2 sm:w-auto lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2;
+    }
 
-  .header-nav-list {
-    @apply flex gap-5 overflow-x-auto bg-gradient-to-tr from-white px-6 py-3.5 whitespace-nowrap shadow-md sm:rounded-full;
-  }
+    .header-nav-list {
+        @apply flex gap-5 overflow-x-auto bg-gradient-to-tr from-white px-6 py-3.5 whitespace-nowrap shadow-md sm:rounded-full;
+    }
 
-  .nav-link {
-    @apply relative font-medium text-gray-800 hover:text-blue-700;
-  }
+    .nav-link {
+        @apply relative font-medium text-gray-800 hover:text-blue-700;
+    }
 
-  .nav-link-active {
-    @apply text-blue-700 after:absolute after:-bottom-1 after:left-1/4 after:h-[2px] after:w-1/2 after:rounded-full after:bg-blue-700;
-    content: "";
-  }
+    .nav-link-active {
+        @apply text-blue-700 after:absolute after:-bottom-1 after:left-1/4 after:h-[2px] after:w-1/2 after:rounded-full after:bg-blue-700;
+        content: "";
+    }
 
-  .header-toggle-btn {
-    @apply absolute top-2 right-2 z-10 rounded-full bg-blue-50 p-3 text-xl lg:relative lg:top-auto lg:right-auto;
-  }
+    .header-toggle-btn {
+        @apply absolute top-2 right-2 z-10 rounded-full bg-blue-50 p-3 text-xl lg:relative lg:top-auto lg:right-auto;
+    }
 
-  .header-toggle-icon {
-    @apply size-6 fill-blue-500;
-  }
+    .header-toggle-icon {
+        @apply size-6 fill-blue-500;
+    }
 }

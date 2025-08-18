@@ -40,6 +40,11 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.login');
         });
 
+        // Setze die Register-View
+        Fortify::registerView(function () {
+            return view('auth.register');
+        });
+
         // Nach Login auf Dashboard weiterleiten
         \Laravel\Fortify\Fortify::authenticateUsing(function ($request) {
             $user = \App\Models\User::where('email', $request->email)->first();

@@ -1,15 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.user')
 
 @section('content')
-<div class="min-h-screen flex justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100 px-2">
-    <main class="w-full max-w-4xl mx-auto p-6 sm:p-10 flex flex-col items-center backdrop-blur-md">
-        <header class="w-full flex items-center justify-between mb-8 px-2 sm:px-0">
-            <div class="flex items-center gap-2">
-                <span class="text-blue-400 text-sm">Du bist hier:</span>
-                <span class="text-blue-900 font-semibold">Meine Links</span>
-            </div>
-            <a href="{{ route('dashboard') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium text-sm shadow transition-all duration-150">Zurück zum Dashboard</a>
-        </header>
+<div class="min-h-screen max-w-md mx-auto flex flex-col">
+
         <header class="mb-8 text-center">
             <h1 class="text-2xl font-semibold text-blue-900 tracking-tight">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h1>
             <span class="text-blue-400 text-base">-- {{ '@'.Auth::user()->username }} --</span>
@@ -70,7 +63,6 @@
                 <div id="orderStatus" class="mt-2 text-center text-sm"></div>
             </form>
         </section>
-    </main>
 </div>
 <footer class="fixed bottom-0 left-0 w-full bg-white/80 border-t border-blue-200 rounded-t-3xl shadow-2xl flex flex-col items-center py-4 z-40 backdrop-blur-md">
     <button id="openNewLinkPanel" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl font-semibold text-base shadow transition-all duration-150 mb-2">Neuer Link</button>

@@ -1,10 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.user')
 
 @section('content')
-    <div
-        class="min-h-screen flex items-center py-12 justify-center bg-gradient-to-br from-blue-200 via-white to-blue-400 text-gray-900">
-        <div
-            class="max-w-lg w-full mx-4 sm:mx-auto bg-white/80 backdrop-blur-2xl rounded-3xl shadow-2xl p-6 sm:p-8 border border-blue-300 ring-2 ring-blue-100">
 
             <div
                 class="absolute top-2 right-2 flex gap-2  group-hover:opacity-100 transition-opacity duration-200
@@ -116,6 +112,5 @@
                     class="w-full bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white px-8 py-3 rounded-xl font-bold shadow-lg transition-all duration-200 tracking-wide">Profil
                     speichern</button>
             </form>
-        </div>
-    </div>
+
 @endsection
