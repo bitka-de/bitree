@@ -18,11 +18,12 @@ return new class extends Migration
             $table->string('email')->unique();             // usermail
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->enum('gender', ['x','m','w'])->default('x');
+            $table->enum('gender', ['x', 'm', 'w'])->default('x');
             $table->string('user_image')->nullable();      // Pfad zum Bild
             $table->timestamp('registered_at')->useCurrent();
             $table->timestamp('verified_at')->nullable();  // default null
-            $table->enum('role', ['master','admin','user'])->default('user');
+            $table->enum('role', ['master', 'admin', 'user'])->default('user');
+            $table->boolean('livestatus')->default(false);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -5,13 +5,26 @@
     <x-admin.header title="Dashboard" />
 
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+    <div class="grid col-span-2 md:grid-cols-4 gap-6 mb-8">
 
-        <div class="col-span-4 bg-brand-900 text-white shadow-lg rounded-2xl p-6 space-y-4">
+
+        <div class=" col-span-2 md:col-span-4 bg-brand-900 text-white shadow-lg rounded-2xl p-6 space-y-4">
             <div class="space-y-2">
-                <h2 class="text-2xl font-bold">Willkommen zurück, {{ Auth::user()->username }} 👋</h2>
+                @php
+                    $hour = now()->hour;
+                    if ($hour < 12) {
+                        $greeting = 'Moin Moin';
+                    } elseif ($hour < 18) {
+                        $greeting = 'Hallo';
+                    } else {
+                        $greeting = 'Guten Abend';
+                    }
+                @endphp
+                <h2 class="text-2xl font-bold">
+                    {{ $greeting }}, {{ Auth::user()->username }} 👋
+                </h2>
                 <p class="text-gray-300 text-sm">
-                    Schön, dich wiederzusehen! Hier findest du deine aktuellen Zahlen und Insights auf einen Blick.
+                    Schön, dich wiederzusehen!<br>Hier findest du deine aktuellen Zahlen und Insights auf einen Blick.
                 </p>
             </div>
             <div class="flex items-center gap-4">

@@ -2,6 +2,9 @@
 
 @section('content')
     <!-- DESIGN -->
+
+        <x-admin.livestatus />
+
     <div class="max-w-md mx-auto">
 
 
@@ -48,9 +51,9 @@
         <main>
 
             <div class="flex items-center my-6">
-                <div class="flex-1 h-px bg-gradient-to-l from-blue-200 to-transparent"></div>
-                <h2 class="mx-4 text-sm text-blue-500/60 text-center">Über mich</h2>
-                <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                <div class="flex-1 h-px bg-gradient-to-l from-brand-200 to-transparent"></div>
+                <h2 class="mx-4 text-sm text-brand-500/60 text-center">Über mich</h2>
+                <div class="flex-1 h-px bg-gradient-to-r from-brand-200 to-transparent"></div>
             </div>
 
             <div class="header-about-me mt-4 mx-auto text-gray-700 text-sm max-w-md">
@@ -62,27 +65,27 @@
             </div>
 
             <div class="flex items-center my-6">
-                <div class="flex-1 h-px bg-gradient-to-l from-blue-200 to-transparent"></div>
-                <h2 class="mx-4 text-sm text-blue-500/60 text-center">Meine Links</h2>
-                <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                <div class="flex-1 h-px bg-gradient-to-l from-brand-200 to-transparent"></div>
+                <h2 class="mx-4 text-sm text-brand-500/60 text-center">Meine Links</h2>
+                <div class="flex-1 h-px bg-gradient-to-r from-brand-200 to-transparent"></div>
             </div>
             <section class="w-full max-w-5xl mx-auto px-4 flex flex-col gap-2">
                 @forelse($links as $link)
                     <a href="{{ $link->url }}" target="_blank" rel="noopener"
-                        class="block w-full bg-white/30 border border-blue-100 shadow-sm rounded-full px-6 py-3 text-center font-semibold text-lg hover:bg-blue-50 transition-all duration-150
-                    {{ $loop->first ? 'text-blue-700 bg-white/50 mb-2 border-blue-300 ' : 'text-blue-900' }}">
+                        class="block w-full bg-white/30 border border-brand-100 shadow-sm rounded-full px-6 py-3 text-center font-semibold text-lg hover:bg-brand-50 transition-all duration-150
+                    {{ $loop->first ? 'text-brand-700 bg-white/50 mb-2 border-brand-300 ' : 'text-brand-900' }}">
                         {{ $link->title }}
                     </a>
                 @empty
-                    <div class="text-center text-blue-300">Keine Links vorhanden.</div>
+                    <div class="text-center text-brand-300">Keine Links vorhanden.</div>
                 @endforelse
             </section>
 
 
             <div class="flex items-center my-6">
-                <div class="flex-1 h-px bg-gradient-to-l from-blue-200 to-transparent"></div>
-                <h2 class="mx-4 text-sm text-blue-500/60 text-center">Meine Socials</h2>
-                <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                <div class="flex-1 h-px bg-gradient-to-l from-brand-200 to-transparent"></div>
+                <h2 class="mx-4 text-sm text-brand-500/60 text-center">Meine Socials</h2>
+                <div class="flex-1 h-px bg-gradient-to-r from-brand-200 to-transparent"></div>
             </div>
 
             <div class="flex gap-2 justify-center items-center">
@@ -98,8 +101,8 @@
                 @foreach ($socials as $social)
                     @if ($social['url'])
                         <a href="{{ $social['url'] }}" target="_blank" rel="noopener"
-                            class="bg-white/30 border border-blue-400  rounded-full p-3 flex items-center shadow-sm hover:bg-blue-50 transition-all duration-150">
-                            <x-dynamic-component :component="$social['icon']" class="w-6 h-6 text-blue-800" />
+                            class="bg-white/30 border border-brand-400  rounded-full p-3 flex items-center shadow-sm hover:bg-brand-50 transition-all duration-150">
+                            <x-dynamic-component :component="$social['icon']" class="w-6 h-6 text-brand-800" />
                         </a>
                     @else
                         <div class="bg-white/30 border border-white shadow-lg rounded-full p-2 flex items-center">

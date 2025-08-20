@@ -27,6 +27,13 @@ Route::middleware(['auth'])->group(function () {
     // Profile
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+        // Toggle livestatus
+        Route::post('/profile/toggle-livestatus', function () {
+            $user = Auth::user();
+            $user->livestatus = !$user->livestatus;
+            $user->save();
+            return response()->json(['success' => true, 'livestatus' => $user->livestatus]);
+        })->name('profile.toggleLivestatus');
     // MyLinks CRUD
     Route::get('/mylinks', [App\Http\Controllers\MyLinksController::class, 'index'])->name('mylinks');
     Route::post('/mylinks', [App\Http\Controllers\MyLinksController::class, 'store'])->name('mylinks.store');
@@ -41,7 +48,7 @@ Route::get('/@{username}', function ($username) {
         $links = \App\Models\Link::where('user_id', $user->id)->orderBy('order')->get();
         return view('user', compact('user', 'links'));
     } else {
-        return "Dieser User existiert nicht. Möchtest du ein Account anlegen?";
+        return view('nouser');
     }
 })->name('profile.byusername');
 
