@@ -27,19 +27,21 @@ Route::middleware(['auth'])->group(function () {
     // Profile
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
-        // Toggle livestatus
-        Route::post('/profile/toggle-livestatus', function () {
-            $user = Auth::user();
-            $user->livestatus = !$user->livestatus;
-            $user->save();
-            return response()->json(['success' => true, 'livestatus' => $user->livestatus]);
-        })->name('profile.toggleLivestatus');
+    // Toggle livestatus
+    Route::post('/profile/toggle-livestatus', function () {
+        $user = Auth::user();
+        $user->livestatus = !$user->livestatus;
+        $user->save();
+        return response()->json(['success' => true, 'livestatus' => $user->livestatus]);
+    })->name('profile.toggleLivestatus');
     // MyLinks CRUD
     Route::get('/mylinks', [App\Http\Controllers\MyLinksController::class, 'index'])->name('mylinks');
     Route::post('/mylinks', [App\Http\Controllers\MyLinksController::class, 'store'])->name('mylinks.store');
     Route::put('/mylinks/{link}', [App\Http\Controllers\MyLinksController::class, 'update'])->name('mylinks.update');
     Route::delete('/mylinks/{link}', [App\Http\Controllers\MyLinksController::class, 'destroy'])->name('mylinks.destroy');
     Route::post('/mylinks/reorder', [App\Http\Controllers\MyLinksController::class, 'reorder'])->name('mylinks.reorder');
+    // Builder page
+    Route::get('/builder', fn() => view('admin.builder'))->name('builder');
 });
 
 Route::get('/@{username}', function ($username) {

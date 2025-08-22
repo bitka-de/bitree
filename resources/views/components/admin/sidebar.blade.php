@@ -41,10 +41,12 @@
                         label="Benutzer" />
                 @endif
 
-                <x-admin.sidebar.link route="mylinks" :active="true" icon='phosphor-link'
-                    label="Links" />
+                <x-admin.sidebar.link route="mylinks" :active="true" icon='phosphor-link' label="Links" />
                 <x-admin.sidebar.link route="preview" :active="true" icon='phosphor-device-mobile-camera'
                     label="Vorschau" />
+
+                <x-admin.sidebar.link route="builder" :active="true" icon='phosphor-pencil-ruler'
+                    label="Builder" />
 
 
             </ul>
